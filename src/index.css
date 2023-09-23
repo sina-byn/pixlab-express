@@ -1,0 +1,6 @@
+@tailwind components;
+@tailwind utilities;
+
+button[type='button'], input[type="text"] {
+  @apply text-gray-200 font-normal border-gray-300/50 rounded-sm;
+}
