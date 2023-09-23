@@ -8,6 +8,7 @@ import Select from './Select';
 import FilterInput from './FilterInput';
 import ExtensionSelect from './ExtensionSelect';
 import QualityInput from './QualityInput';
+import ResetFiltersButton from './ResetFiltersButton';
 import UploadButton from './UploadButton';
 import DownloadButton from './DownloadButton';
 import RotateButton from './RotateButton';
@@ -41,11 +42,12 @@ const Sidebar = () => {
       {unappliedFilters.length > 0 && (
         <Select title='filters' data={unappliedFilters} onChange={changeHandler} />
       )}
-      <div className='filter-inputs mt-4'>
+      <div className='filter-inputs my-4'>
         {sortFilters(appliedFilters).map(f => (
           <FilterInput key={f} filter={f} setAppliedFilters={setAppliedFilters} />
         ))}
       </div>
+      <ResetFiltersButton />
       <Divider my='xs' label='Output' labelPosition='left' />
       <ExtensionSelect />
       <QualityInput />
