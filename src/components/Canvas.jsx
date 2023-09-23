@@ -34,7 +34,7 @@ const Canvas = () => {
   }, [filters, imageTransform, canvasRef.current]);
 
   return (
-    <div className='canvas-wrap w-full h-full bg-primary-dark overflow-hidden'>
+    <div className='canvas-wrap relative w-full h-full bg-primary-dark overflow-hidden'>
       <TransformWrapper
         smooth
         limitToBounds

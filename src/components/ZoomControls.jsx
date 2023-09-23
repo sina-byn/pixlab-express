@@ -16,7 +16,7 @@ const ZoomControls = () => {
   const resetHandler = () => resetTransform();
 
   return (
-    <div className='zoom-controls flex items-center fixed bottom-4 right-[calc(290px_+_1rem)] z-30 bg-primary rounded-sm overflow-hidden'>
+    <div className='zoom-controls flex items-center fixed md:absolute bottom-4 right-4 z-30 bg-primary rounded-sm overflow-hidden'>
       <ActionIcon
         size='lg'
         title='zoom out'
