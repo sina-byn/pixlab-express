@@ -47,6 +47,7 @@ const NumInput = ({ icon, label, defaultValue, value, onChange, unit, min, max, 
         onChange={changeHandler}
         min={min}
         max={max}
+        allowNegative={false}
         handlersRef={handlersRef}
         rightSection={controls}
         leftSection={icon}
