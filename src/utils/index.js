@@ -5,14 +5,12 @@ const readImage = (imageFile, onRead) => {
   const reader = new FileReader();
 
   reader.onload = e => {
+    const ext = imageFile.name.slice(imageFile.name.lastIndexOf('.')) === 'png' ? 'png' : 'jpeg';
     const dataURL = e.target.result;
     const image = new Image();
 
     image.src = dataURL;
-
-    image.onload = () => {
-      onRead({ el: image, dataURL, width: image.naturalWidth, height: image.naturalHeight });
-    };
+    image.onload = () => onRead(image, dataURL, ext);
   };
 
   reader.readAsDataURL(imageFile);
@@ -21,7 +19,7 @@ const readImage = (imageFile, onRead) => {
 const drawImage = (canvas, image, imageProps) => {
   const context = canvas.getContext('2d');
   const { el, width, height } = image;
-  const { rotate, scale, filters } = imageProps;
+  const { rotate = 0, scale = { x: 1, y: 1 }, filters = {} } = imageProps;
   const radians = (rotate * Math.PI) / 180;
 
   if ((rotate / 90) % 2 === 0) {

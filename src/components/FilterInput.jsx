@@ -5,7 +5,7 @@ import useFilter from '../hooks/useFilter';
 import { ActionIcon } from '@mantine/core';
 
 // * components
-import NumInput from '../components/NumInput';
+import NumInput from './NumInput';
 
 // * icons
 import { IconColorFilter, IconTrash } from '@tabler/icons-react';

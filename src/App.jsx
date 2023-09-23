@@ -4,11 +4,13 @@ import React from 'react';
 import { MantineProvider } from '@mantine/core';
 import ImageContextProvider from './context/ImageContextProvider';
 
+// * components
+import Header from './components/Header';
+import Canvas from './components/Canvas';
+import Sidebar from './components/Sidebar';
+
 // * styles
 import '@mantine/core/styles.css';
-import Header from './components/Header';
-import ImagePanel from './components/ImagePanel';
-import Sidebar from './components/Sidebar';
 
 const App = () => {
   return (
@@ -16,7 +18,7 @@ const App = () => {
       <ImageContextProvider>
         <div className='app-shell grid grid-cols-[1fr,_290px] grid-rows-[auto,_1fr] w-screen h-screen overflow-hidden'>
           <Header />
-          <ImagePanel />
+          <Canvas />
           <Sidebar />
         </div>
       </ImageContextProvider>

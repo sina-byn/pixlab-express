@@ -1,18 +1,25 @@
 // * hooks
+import useFilter from './useFilter';
 import useImageContext from './useImageContext';
+import useImageTransform from './useImageTransform';
+import useOutputConfig from './useOutputConfig';
 
 const useImage = () => {
   const { image, setImage } = useImageContext();
+  const { resetFilters } = useFilter();
+  const { resetTransform } = useImageTransform();
+  const { setOutputConfig } = useOutputConfig();
 
-  const initImage = () => {
-    
+  const updateImage = (image, dataURL, ext) => {
+    const { naturalWidth, naturalHeight } = image;
+
+    setImage({ el: image, dataURL, width: naturalWidth, height: naturalHeight });
+    setOutputConfig({ quality: 100, ext });
+    resetTransform();
+    resetFilters();
   };
 
-  const updateImage = (property, value) => {
-    setImage(prevImage => ({ ...prevImage, [property]: value }));
-  };
-
-  return { image, setImage, updateImage };
+  return { image, updateImage };
 };
 
 export default useImage;

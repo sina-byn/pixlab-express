@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Header = () => {
   return (
     <header className='app-header flex items-center justify-between bg-primary text-gray-200 py-3 px-4'>

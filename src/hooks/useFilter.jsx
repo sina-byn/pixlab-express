@@ -1,6 +1,9 @@
 // * hooks
 import useImageContext from '../hooks/useImageContext';
 
+// * data
+import { filters_data } from '../data/filters';
+
 const useFilter = () => {
   const { filters, setFilters } = useImageContext();
 
@@ -17,7 +20,16 @@ const useFilter = () => {
     });
   };
 
-  return { filters, applyFilter, removeFilter };
+  const resetFilters = () => {
+    setFilters(prevFilters => {
+      return Object.keys(prevFilters).reduce((defaultFilters, filter) => {
+        defaultFilters[filter] = filters_data[filter].DEFAULT;
+        return defaultFilters;
+      }, {});
+    });
+  };
+
+  return { filters, applyFilter, removeFilter, resetFilters };
 };
 
 export default useFilter;

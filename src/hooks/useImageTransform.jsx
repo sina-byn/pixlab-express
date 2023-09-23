@@ -25,7 +25,11 @@ const useImageTransform = () => {
     setImageTransform(prevTransform => ({ ...prevTransform, scale: updatedScale }));
   };
 
-  return { imageTransform, rotateImage, flipImage };
+  const resetTransform = () => {
+    setImageTransform({ rotate: 0, scale: { x: 1, y: 1 } });
+  };
+
+  return { imageTransform, rotateImage, flipImage, resetTransform };
 };
 
 export default useImageTransform;

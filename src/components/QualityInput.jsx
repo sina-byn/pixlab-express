@@ -2,7 +2,7 @@
 import useOutputConfig from '../hooks/useOutputConfig';
 
 // * components
-import NumInput from '../components/NumInput';
+import NumInput from './NumInput';
 
 // * icons
 import { IconCamera } from '@tabler/icons-react';

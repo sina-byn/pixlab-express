@@ -11,9 +11,9 @@ import { IconUpload } from '@tabler/icons-react';
 import { readImage } from '../utils';
 
 const UploadButton = () => {
-  const { setImage } = useImage();
+  const { updateImage } = useImage();
 
-  const changeHandler = image => readImage(image, setImage);
+  const changeHandler = image => readImage(image, updateImage);
 
   return (
     <FileButton onChange={changeHandler} accept='image/png,image/jpeg'>

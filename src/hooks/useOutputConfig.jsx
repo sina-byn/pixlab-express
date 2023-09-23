@@ -8,7 +8,7 @@ const useOutputConfig = () => {
     setOutputConfig(prevConf => ({ ...prevConf, [field]: value }));
   };
 
-  return { outputConfig, updateOutputConfig };
+  return { outputConfig, setOutputConfig, updateOutputConfig };
 };
 
 export default useOutputConfig;

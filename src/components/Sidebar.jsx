@@ -1,16 +1,20 @@
 import { useState } from 'react';
 
+// * mantine
+import { Divider } from '@mantine/core';
+
+// * components
+import Select from './Select';
+import FilterInput from './FilterInput';
+import ExtensionSelect from './ExtensionSelect';
+import QualityInput from './QualityInput';
+import UploadButton from './UploadButton';
+import DownloadButton from './DownloadButton';
+import RotateButton from './RotateButton';
+import FlipButton from './FlipButton';
+
 // * data
 import { filter_names } from '../data/filters';
-
-import Select from './Select';
-import { Divider } from '@mantine/core';
-import FilterInput from '../features/FilterInput';
-import ExtensionSelect from '../features/ExtensionSelect';
-import QualityInput from '../features/QualityInput';
-import UploadButton from '../features/UploadButton';
-import TransformControls from '../features/TransformControls';
-import DownloadButton from './DownloadButton';
 
 // * utils
 import { sortFilters } from '../utils';
@@ -27,7 +31,12 @@ const Sidebar = () => {
     <aside className='sidebar w-[290px] h-screen bg-primary text-gray-200 row-start-1 row-span-2 col-start-2 px-4 py-4 overflow-y-auto'>
       <UploadButton />
       <Divider my='xs' label='Transform' labelPosition='left' />
-      <TransformControls />
+      <div className='transform-controls grid grid-cols-2 gap-2 w-fit mx-auto'>
+        <RotateButton dir='left' />
+        <RotateButton dir='right' />
+        <FlipButton axis='x' />
+        <FlipButton axis='y' />
+      </div>
       <Divider my='xs' label='Filters' labelPosition='left' />
       {unappliedFilters.length > 0 && (
         <Select title='filters' data={unappliedFilters} onChange={changeHandler} />
