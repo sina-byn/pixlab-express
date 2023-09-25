@@ -20,9 +20,9 @@ const UploadButton = () => {
   const changeHandler = image => {
     if (resetRef.current) resetRef.current();
 
-    if (image.size > 5 * 1024 ** 2) {
+    if (image.size > 10 * 1024 ** 2) {
       return notifications.show({
-        message: 'image size should not exceed 5mb',
+        message: 'image size should not exceed 10mb',
         classNames: {
           root: 'bg-primary-dark w-fit border-red-200 rounded-sm py-1',
           description: 'text-gray-200',

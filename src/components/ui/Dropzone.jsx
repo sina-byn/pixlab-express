@@ -28,7 +28,7 @@ const ImageDropzone = () => {
     <Dropzone
       multiple={false}
       onDrop={dropHandler}
-      maxSize={5 * 1024 ** 2}
+      maxSize={10 * 1024 ** 2}
       accept={IMAGE_MIME_TYPE}
       classNames={{
         root: 'w-full h-full outline outline-2 outline-dashed outline-blue-500 -outline-offset-8',
@@ -48,7 +48,7 @@ const ImageDropzone = () => {
         <div>
           <p className='text-xl'>Drag your image here or click to select an image</p>
           <p className='text-sm text-gray-300/60 mt-2'>
-            Attach only a single image at once, each image should not exceed 5mb
+            Attach only a single image at once, each image should not exceed 10mb
           </p>
         </div>
       </Group>
