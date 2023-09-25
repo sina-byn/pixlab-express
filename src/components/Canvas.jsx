@@ -7,7 +7,8 @@ import useImageContext from '../hooks/useImageContext';
 import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
 
 // * components
-import ZoomControls from './ZoomControls';
+import ImageDropzone from './ui/Dropzone';
+import ZoomControls from './ui/ZoomControls';
 
 // * utils
 import { drawImage } from '../utils';
@@ -35,6 +36,7 @@ const Canvas = () => {
 
   return (
     <div className='canvas-wrap relative w-full h-full bg-primary-dark overflow-hidden'>
+      {!image.dataURL && <ImageDropzone />}
       <TransformWrapper
         smooth
         limitToBounds

@@ -1,5 +1,5 @@
 // * hooks
-import useImageTransform from '../hooks/useImageTransform';
+import useImageTransform from '../../hooks/useImageTransform';
 
 // * mantine
 import { ActionIcon } from '@mantine/core';
@@ -13,7 +13,7 @@ const RotateButton = ({ dir }) => {
   const rotateHandler = () => rotateImage(dir);
 
   return (
-    <ActionIcon size='lg' variant='subtle' title={`rotate ${dir}`} onClick={rotateHandler}>
+    <ActionIcon size='lg' title={`rotate ${dir}`} onClick={rotateHandler}>
       {dir === 'right' ? <IconRotate width={18} /> : <IconRotateClockwise width={18} />}
     </ActionIcon>
   );

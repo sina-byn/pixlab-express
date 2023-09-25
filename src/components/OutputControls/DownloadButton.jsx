@@ -1,5 +1,5 @@
 // * hooks
-import useImageContext from '../hooks/useImageContext';
+import useImageContext from '../../hooks/useImageContext';
 
 // * mantine
 import { Button } from '@mantine/core';
@@ -8,7 +8,7 @@ import { Button } from '@mantine/core';
 import { IconDownload } from '@tabler/icons-react';
 
 // * utils
-import { drawImage } from '../utils';
+import { drawImage } from '../../utils';
 
 const DownloadButton = () => {
   const { image, filters, imageTransform, outputConfig } = useImageContext();
@@ -31,7 +31,6 @@ const DownloadButton = () => {
     <Button
       fullWidth
       mt='1rem'
-      variant='subtle'
       onClick={downloadHandler}
       rightSection={<IconDownload width={18} />}
     >

@@ -18,20 +18,12 @@ const NumInput = ({ icon, label, defaultValue, value, onChange, unit, min, max, 
   const controls = (
     <div className='right-controls flex items-center absolute right-0 h-full bg-primary'>
       {children}
-      <span className='unit text-sm select-none px-2'>{unit}</span>
+      <span className='unit text-sm select-none px-1'>{unit}</span>
       <div className='number-controls flex flex-col h-full'>
-        <Button
-          unstyled
-          onClick={incrementHandler}
-          className='flex items-center justify-center h-1/2 bg-transparent hover:bg-zinc-900 border-0 cursor-pointer'
-        >
+        <Button unstyled onClick={incrementHandler} className='h-full hover:bg-zinc-900 px-1'>
           <IconChevronUp width={12} height={12} />
         </Button>
-        <Button
-          unstyled
-          onClick={decrementHandler}
-          className='flex items-center justify-center h-1/2 bg-transparent hover:bg-zinc-900 border-0 cursor-pointer'
-        >
+        <Button unstyled onClick={decrementHandler} className='h-full hover:bg-zinc-900 px-1'>
           <IconChevronDown width={12} height={12} />
         </Button>
       </div>
@@ -55,9 +47,8 @@ const NumInput = ({ icon, label, defaultValue, value, onChange, unit, min, max, 
       />
       <Button
         size='xs'
-        variant='subtle'
         onClick={resetHandler}
-        className='block h-fit hover:bg-transparent border-0 py-1 px-0 mr-0 ml-auto mt-0.5'
+        className='block h-fit border-0 py-1 px-0 mr-0 ml-auto mt-0.5'
       >
         reset
       </Button>

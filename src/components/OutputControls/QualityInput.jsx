@@ -1,8 +1,8 @@
 // * hooks
-import useOutputConfig from '../hooks/useOutputConfig';
+import useOutputConfig from '../../hooks/useOutputConfig';
 
 // * components
-import NumInput from './NumInput';
+import NumInput from '../ui/NumInput';
 
 // * icons
 import { IconCamera } from '@tabler/icons-react';
@@ -14,7 +14,7 @@ const QualityInput = () => {
 
   if (outputConfig.ext === 'png') {
     return (
-      <span className='block text-xs text-gray-300/50 mt-2'>
+      <span className='block text-[0.7rem] text-gray-300/50 mt-2'>
         * only the jpeg format supports the quality settings
       </span>
     );

@@ -45,7 +45,6 @@ const Select = ({ title, data, onChange }) => {
       <Combobox.Target withAriaAttributes={false}>
         <Button
           fullWidth
-          variant='outline'
           justify='space-between'
           className='capitalize px-2'
           rightSection={<IconPlus width={15} />}
@@ -55,7 +54,7 @@ const Select = ({ title, data, onChange }) => {
         </Button>
       </Combobox.Target>
 
-      <Combobox.Dropdown className='bg-primary text-gray-200 border-gray-300/50'>
+      <Combobox.Dropdown className='bg-primary-dark text-gray-200 border-gray-300/50'>
         <Combobox.Search
           value={search}
           onChange={event => setSearch(event.currentTarget.value)}

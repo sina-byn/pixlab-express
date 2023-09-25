@@ -47,8 +47,6 @@ const sortFilters = filters => {
 const joinFilters = filters => {
   return Object.entries(filters).reduce((filtersString, [filter, value]) => {
     if (value.toString().trim() !== '') {
-      console.log(filter);
-      console.log(filters_data[filter]);
       const { unit } = filters_data[filter];
       filtersString += `${filter}(${value}${unit})`;
     }

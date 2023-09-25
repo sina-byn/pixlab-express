@@ -14,12 +14,32 @@ const useImage = () => {
     const { naturalWidth, naturalHeight } = image;
 
     setImage({ el: image, dataURL, width: naturalWidth, height: naturalHeight });
-    setOutputConfig({ quality: 100, ext });
+    setOutputConfig({ quality: 100, ext, originalExt: ext });
     resetTransform();
     resetFilters();
   };
 
-  return { image, updateImage };
+  const resetImage = () => {
+    setOutputConfig(prevConf => {
+      const updatedConfig = { ...prevConf };
+
+      updatedConfig.quality = 100;
+      updatedConfig.ext = updatedConfig.originalExt;
+
+      return updatedConfig;
+    });
+    resetTransform();
+    resetFilters();
+  };
+
+  const deleteImage = () => {
+    setImage({ el: null, dataURL: null, width: 0, height: 0 });
+    setOutputConfig({ quality: 100, ext: 'png', originalExt: 'png' });
+    resetTransform();
+    resetFilters();
+  };
+
+  return { image, updateImage, resetImage, deleteImage };
 };
 
 export default useImage;

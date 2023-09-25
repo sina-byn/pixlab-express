@@ -1,17 +1,17 @@
 // * hooks
-import useFilter from '../hooks/useFilter';
+import useFilter from '../../hooks/useFilter';
 
 // * mantine
 import { ActionIcon } from '@mantine/core';
 
 // * components
-import NumInput from './NumInput';
+import NumInput from '../ui/NumInput';
 
 // * icons
 import { IconColorFilter, IconTrash } from '@tabler/icons-react';
 
 // * data
-import { filters_data } from '../data/filters';
+import { filters_data } from '../../data/filters';
 
 const FilterInput = ({ filter, setAppliedFilters }) => {
   const { DEFAULT, unit, min = 0, max } = filters_data[filter];
@@ -36,8 +36,7 @@ const FilterInput = ({ filter, setAppliedFilters }) => {
     >
       <ActionIcon
         size='sm'
-        title='remove'
-        variant='subtle'
+        title='remove filter'
         onClick={removeFilterHandler}
         className='absolute bottom-[120%] right-0'
       >

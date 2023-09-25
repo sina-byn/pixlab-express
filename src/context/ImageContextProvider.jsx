@@ -14,6 +14,7 @@ const ImageContextProvider = ({ children }) => {
   const [outputConfig, setOutputConfig] = useState({
     quality: 100,
     ext: 'png',
+    originalExt: 'png'
   });
   const [imageTransform, setImageTransform] = useState({
     rotate: 0,

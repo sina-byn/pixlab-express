@@ -1,5 +1,5 @@
 // * hooks
-import useImageTransform from '../hooks/useImageTransform';
+import useImageTransform from '../../hooks/useImageTransform';
 
 // * mantine
 import { ActionIcon } from '@mantine/core';
@@ -14,7 +14,7 @@ const FlipButton = ({ axis }) => {
   const flipHandler = () => flipImage(axis);
 
   return (
-    <ActionIcon size='lg' variant='subtle' title={title} onClick={flipHandler}>
+    <ActionIcon size='lg' title={title} onClick={flipHandler}>
       {axis === 'y' ? <IconFlipHorizontal width={18} /> : <IconFlipVertical width={18} />}
     </ActionIcon>
   );

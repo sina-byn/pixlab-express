@@ -1,5 +1,5 @@
 // * hooks
-import useOutputConfig from '../hooks/useOutputConfig';
+import useOutputConfig from '../../hooks/useOutputConfig';
 
 // * mantine
 import { Group, ActionIcon } from '@mantine/core';
@@ -25,7 +25,6 @@ const ExtensionSelect = () => {
           <ActionIcon
             key={ext}
             size='lg'
-            variant='subtle'
             onClick={clickHandler}
             className={ext === outputConfig.ext && 'bg-blue-500'}
           >

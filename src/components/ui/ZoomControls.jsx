@@ -17,40 +17,16 @@ const ZoomControls = () => {
 
   return (
     <div className='zoom-controls flex items-center fixed md:absolute bottom-4 right-4 z-30 bg-primary rounded-sm overflow-hidden'>
-      <ActionIcon
-        size='lg'
-        title='zoom out'
-        variant='subtle'
-        onClick={zoomOutHandler}
-        className='border-0'
-      >
+      <ActionIcon size='lg' title='zoom out' onClick={zoomOutHandler} className='border-0'>
         <IconZoomOut width={18} />
       </ActionIcon>
-      <ActionIcon
-        size='lg'
-        title='zoom in'
-        variant='subtle'
-        onClick={zoomInHandler}
-        className='border-0'
-      >
+      <ActionIcon size='lg' title='zoom in' onClick={zoomInHandler} className='border-0'>
         <IconZoomIn width={18} />
       </ActionIcon>
-      <ActionIcon
-        size='lg'
-        title='zoom reset'
-        variant='subtle'
-        onClick={resetHandler}
-        className='border-0'
-      >
+      <ActionIcon size='lg' title='zoom reset' onClick={resetHandler} className='border-0'>
         <IconZoomReset width={18} />
       </ActionIcon>
-      <ActionIcon
-        size='lg'
-        title='zoom to'
-        variant='subtle'
-        onClick={zoomToHandler}
-        className='border-0'
-      >
+      <ActionIcon size='lg' title='zoom to' onClick={zoomToHandler} className='border-0'>
         <IconZoomPan width={18} />
       </ActionIcon>
     </div>
